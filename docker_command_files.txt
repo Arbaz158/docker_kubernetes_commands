@@ -1,0 +1,45 @@
+Important Commands for docker
+
+1.sudo su --- shifting to root user
+2.yum install docker -y ---- to install docker in local
+3.docker -v or docker --version ----- to check that which version of docker is installed
+4.which docker ---- command is used to confirm that docker is installed or not.
+5.service docker status or docker info ----- command is used to check that status of docker 
+6.service docker start ----- command used to start the docker
+7.docker images --- command to used to get the list of images
+8.docker ps(process status) - command is used to get all the running images
+9.dokcer ps -a ----- command is used to get all the containers either pause or running containers
+10.docker run --name container_name -it ubuntu(image name) /bin/bash  ---- command is used to pull image from docker hub and also run into the local machine.
+11.docker pull chef(image name) ---- command used to just pull image from docker hub instead of pull and run it.
+12.docker attach container_name ------- command is used to access container.
+13.docker start container_name ------ command is used to start the container
+14.docker stop container_name -----command is used to stop the container
+14.docker diff container_name ----- command is used to check all updates occured on a container.
+15.docker commit container_name(already existing container) updateimage(new image name) ----- command is used to create new image from existing container.
+
+steps to create docker file
+a> Create a file name Dockerfile
+b>Add instruction Dockerfile
+c>Build Dockefile to create image 
+d>Run image to create container
+
+16.docker build -t(tag) myimg .(dot in compulsory)   ----- command is used to create image from docker file.
+17.docker run -it --name container_name(new) --privileged=true --volumes-from container_name(old) image_name /bin.bash ----- command is used to create new 
+container with existing container but but including its volume.
+18.docker run -it --name container_name -v /volume2 image_name /bin/bash ----- command is used to create container with volumn by command rather than Dockerfile.
+19.docker run -it --name container_name -v /home/ec2-user:/arbvolume --privileged=true image_name /bin/bash ---- command is used map volume with host(in this case host is ec2-user)
+20.docker volume ls ---- command is used to list all the volumes created locally.
+21.docker volume create <volume_name> ---- another way to create volume.
+22.docker volume rm <volume_name> ---- remove already created volume.
+23.docker volume prune ---- command is used to remove all unused volume.
+24.docker volume inspect <volume_name> --- command is used to inspect about volume.///same command is used for containers.
+25.docker run -td(here instead ot -it ,here it is -td,d means daemon) --name techserver -p 80:80 ubuntu --- command is used to create container and expose port
+26.docker port container_name ---- command is used to check the port number of container.
+27.docker exec -it techserver /bin/bash ----- command is used to access container little bit same as docker attach command, difference is it starts another service also.
+28.apt-get update --- command is used to update on ubuntu os.
+29.apt-get install apache2 ---- command is used to install apache2 to ubuntu os.
+30.cd var/www/html 
+31.add some message to index.html file 
+32.service apache2 start ---- command is used to start the apache2 service, copy the public host and paste and browser it will show that message 
+which you have added into index.html file.
+33.

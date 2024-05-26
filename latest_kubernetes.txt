@@ -1,0 +1,12 @@
+github link -- https://github.com/umairmd385 github repo to clone script file for creating clusters
+
+
+chmod +x .....-Ubuntu.sh
+steps :--
+after clone, cd Kuberntes
+chmod +x ....-Ubuntu.sh
+./.....-Ubuntu.sh
+M for master node
+k8s-master
+W for worker node
+k8s-worker
