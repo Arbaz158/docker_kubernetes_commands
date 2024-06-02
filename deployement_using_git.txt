@@ -1,0 +1,13 @@
+steps to get the latest code from github/gitlab using putty
+1.write your application and upload it to github/gitlab.
+2.if you updated your code , then normally add this into your github/gitlab using add,commit and push command.
+3.now on putty first check that you are on correct branch or not from where you want to take latest modified
+  code using git checkout command
+4.after that Add,commit that file which are modified like you did at the time while pushing new modified files on 
+  github/gitlab.
+5.now before taking the pull from that branch on putty , it is must to execute below command everytime whenever
+  you are running new instance/server , but if the server is the same then any time you can take pull from
+  github/gitlab without using below command.
+-->git config pull.rebase true
+6.then write command for taking pull from the branch, and there you have the latest code, now run that application
+  in order to see the effect.
