@@ -1,0 +1,13 @@
+docker run -it --name mongo-server -p "27017:27017" mongo:latest
+
+docker run -d --name mongodb -p 27017:27017 
+     -e MONGO_INITDB_ROOT_USERNAME=<your-username> 
+     -e MONGO_INITDB_ROOT_PASSWORD=<your-password> 
+      mongo --bind_ip_all
+
+apt-get update
+apt-get install vim -y
+mongod --config /etc/mongod.conf.orig --shutdown
+mongod --config /etc/mongod.conf.orig
+
+docker run -itd --name mongodb -p 27017:27017 mongo --bind_ip_all
