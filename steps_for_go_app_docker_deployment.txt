@@ -1,0 +1,38 @@
+steps to create and deploy go application on docker
+
+1.Develop your go application on your local machine as you do.
+
+2.The only difference is now for the deployment of that application on docker one extra file you need,
+  which is docker file so that you can build an image of that docker file and deploy your application.
+
+3.Add one docker file (Name of that file is always Dockerfile) inside your application working directory
+  (with main.go level file).
+
+4.Now how to write docker file, thats a big question, so there is a particular syntax need to follow while
+  writing docker file(for example you can see on my github inside todo_application for deployement of go
+  application.)
+
+5.Now to shift your application on the ec2-server, so for this simply upload the latest code on your github/gitlab
+  and run your ec2-server using putty/mobaxterm and create new directory inside ec2 server then clone your
+  application from github/gitlab.
+
+6.Now Access your application directory (using cd command) and there you will get your docker file too.
+
+7.Make a image of that docker file in order to deploy your golang application using below command
+  docker build -t imaga_name . (dot is compulsory otherwise you can mention name of docker file too.)
+
+8.Now before running that image make sure that your ec2-server is open for the port which you have mentioned in
+  your docker file.
+
+9.Now there is two way you can deploy your golang application using the docker images
+  a>Directly run that docker image if you want to see the logs using below command
+    --> docker run -p port1:port2 image_name 
+        port1 -- is the port which you have mentioned in you application routing as well as in the docker file
+        port2 -- is the port on which you want to access the api's using browser/postman.
+        -p -- tag is used to expose the port.
+   Note :- Everytime you run the image a new container will be created.
+
+
+  b>Make a container of that image and run this container , but here you can not see the logs.
+
+10.Now your application is deployed and you are ready to access your application api's from browser. 
