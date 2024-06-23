@@ -33,6 +33,9 @@ steps to create and deploy go application on docker
    Note :- Everytime you run the image a new container will be created.
 
 
-  b>Make a container of that image and run this container , but here you can not see the logs.
+  b>Make a container of that image and run this container, to see the logs need to write below command.
+    --->docker run -it -p port1:port2 image_name new container will  be created.
+    to see the logs need to write below command 
+    --->docker logs -f container_id
 
 10.Now your application is deployed and you are ready to access your application api's from browser. 
